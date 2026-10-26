@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "products": [
+    {
+      "sku": "MG102",
+      "images": [
+        {
+          "source": "foto1.png",
+          "name": "mg102-islak-mop-400gr-on.jpg"
+        },
+        {
+          "source": "foto2.png",
+          "name": "mg102-islak-mop-400gr-yan.jpg"
+        },
+        {
+          "source": "foto3.png",
+          "name": "mg102-islak-mop-400gr-detay.jpg"
+        }
+      ]
+    },
+    {
+      "sku": "MG103",
+      "images": [
+        {
+          "source": "mg103-on.png",
+          "name": "mg103-islak-mop-500gr-on.jpg"
+        },
+        {
+          "source": "mg103-yan.png",
+          "name": "mg103-islak-mop-500gr-yan.jpg"
+        },
+        {
+          "source": "mg103-detay.png",
+          "name": "mg103-islak-mop-500gr-detay.jpg"
+        }
+      ]
+    }
+  ]
+}
