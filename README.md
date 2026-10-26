@@ -1,6 +1,6 @@
-# Tedarikya TXT & Görsel Studio — React 2.0
+# Tedarikya TXT & Görsel Studio — React 2.1
 
-React + Vite. Siyah tema, turuncu ve beyaz yazılı butonlar, responsive görünüm.
+React + Vite. Sade koyu tema, turuncu ve beyaz yazılı butonlar, tek sütunlu responsive liste.
 
 ## GitHub → Vercel kurulumu
 
@@ -43,7 +43,7 @@ npm run preview
 ## Kullanım ve değişiklikler
 
 - Birden fazla TXT yükleme, arama, ürün sekmeleri, kopyalama ve orijinal TXT indirme.
-- SKU başlığın altında; marka ve kategori temel alanlardan sonra, açıklamalardan önce.
+- Görünüm sırası: ürün başlığı → anahtar kelimeler → alış fiyatı → SKU → açıklamalar → SEO/meta alanları → ek bilgi → diğer alanlar. Diğer alanlar TXT içindeki kendi sıralarını korur. Marka ve kategori de bu kalan alanlar arasındadır.
 - Kategori ID, satış fiyatı, barkod, ürün kodu ve stok miktarı düzenli görünümde gösterilmez. Orijinal TXT indirmesi dosya içeriğini değiştirmez.
 - Uzun açıklama ve HTML önizlemesi “Daha fazla göster” ile açılır. Açılan açıklama kendi içinde kaydırılmaz; sayfa uzar.
 - Etiketler ve arama kelimeleri ilk 10 öğeyle sınırlı; daha fazla/daha az ile açılır ve kapanır.
@@ -54,3 +54,21 @@ npm run preview
 - HTML içerikleri betik çalıştırmayan ve harici kaynakları engelleyen sandbox önizlemesinde gösterilir.
 
 Vercel hesabında yayınlama bu paketin hazırlanması kapsamında gerçekleştirilmedi; paket GitHub üzerinden dağıtım içindir.
+
+## PS1 ile mevcut v2.0 projesini güncelleme
+
+`Tedarikya_Guncelle_v2_1.ps1` dosyasını `package.json` bulunan proje klasörüne koyun. PowerShell terminalini o klasörde açın:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Tedarikya_Guncelle_v2_1.ps1
+```
+
+Başka klasörden çalıştırmak için:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Tedarikya_Guncelle_v2_1.ps1 -ProjectPath "C:\Projeler\tedarikya-react"
+```
+
+Betik yalnızca `src/main.jsx`, `src/style.css`, `src/fields.js` ve `README.md` dosyalarını günceller. TXT/görselleri ve diğer proje dosyalarını değiştirmez. Değişecek dosyaları zaman damgalı `tedarikya-backup-*` klasörüne yedekler. Beklenmeyen kaynak değişiklikleri varsa üzerine yazmadan durur. Node/npm yoksa güncellemeden önce durur. `node_modules` yoksa `npm ci`, ardından `npm run build` çalıştırır. Derleme başarısız olursa dört kaynak dosyasını eski haline alır; yedek korunur. GitHub'a otomatik göndermez.
+
+Güncellemeden sonra değişiklikleri GitHub'a yükleyin. Vercel ayarları önceki sürümle aynıdır. Tam ZIP zaten güncel olduğundan PS1'i ayrıca çalıştırmanız gerekmez. Yerel PowerShell yürütmesi bu ortamda test edilmedi; üretim derlemesi ve görünüm sıralaması kontrol edildi.
